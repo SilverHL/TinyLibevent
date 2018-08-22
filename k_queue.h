@@ -12,7 +12,27 @@
     struct                      \
     {                           \
         struct type *tqe_next;  /*指向下一个节点*/  \
-        struct type **tqe_prev; /*上一个节点的nex*/
-
+        struct type **tqe_prev; /*上一个节点的next 即entry本身*/ \
 }
+
+#define TAILQ_INIT(head) do {               \
+    (head)->tqh_first = NULL;               \
+    (head)->tqh_first = &(head)->tqh_first; \
+} while (0)
+
+#define TAILQ_INSERT_TAIL(head, elm, field) do {        \
+    (elm)->field.tqe_next = NULL;                   \
+    (elm)->field.tqe_prev = (head)->tqh_last;       \
+    *(head)->tqh_last = (elm);                      \
+    (head)->tqh_last = &(elm)->field.tqe_next;      \
+} while (0)
+
+#define TAILQ_REMOVE(head, elm, field) do {     \
+    if (((elm)->field.tqe_next) ! =NULL)        \
+        (elm)->field.tqe_next->field.tqe_prev =     \
+            (elm)->field.tqe_prev;              \
+    else                        \
+        (head)->tqh_last = (elm)->field.tqe_prev;   \
+    *(elm)->field.tqe_prev = (elm)->field.tqe_next; \
+} while(0)
 #endif
