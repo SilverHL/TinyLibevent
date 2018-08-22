@@ -1,3 +1,11 @@
+/**************************************************
+ *
+ * C++11 TinyLibevent
+ *
+ * Author: @github/SilverHL
+ * ***********************************************/
+
+
 #ifndef _K_EVENTINTERNAL_H_
 #define _K_EVENTINTERNAL_H_
 
@@ -17,9 +25,8 @@ protected:
     int need_reinit;
 };
 
-class event_base
+struct event_base
 {
-private:
     const eventop *evsel;       //父类指针
     void *evbase;
     int event_count; 

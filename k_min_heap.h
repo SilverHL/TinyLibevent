@@ -1,3 +1,11 @@
+/**************************************************
+ *
+ * C++11 TinyLibevent
+ *
+ * Author: @github/SilverHL
+ * ***********************************************/
+
+
 #ifndef _K_MIN_HEAP_H_
 #define _K_MIN_HEAP_H_
 
