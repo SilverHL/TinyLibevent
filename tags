@@ -50,6 +50,7 @@ TAILQ_REMOVE	k_queue.h	38;"	d
 _INIT_MIN_HEAP_SIZE	k_min_heap.h	/^enum _INIT_MIN_HEAP_SIZE { _init_min_heap_size = 8 };$/;"	g
 _K_EVENTINTERNAL_H_	k_event-internal.h	10;"	d
 _K_EVENT_H_	k_event.h	9;"	d
+_K_EVSIGNAL_H_	k_evsignal.h	9;"	d
 _K_EVUTIL_H_	k_evutil.h	10;"	d
 _K_MIN_HEAP_H_	k_min_heap.h	10;"	d
 _K_QUEUE_H_	k_queue.h	10;"	d
@@ -63,6 +64,7 @@ cbarg	k_event.h	/^    void *cbarg;$/;"	m	struct:bufferevent
 cbargs	k_event.h	/^    void *cbargs;$/;"	m	struct:evbuffer
 ecutil_timercmp	k_evutil.h	36;"	d
 enabled	k_event.h	/^    short enabled;  \/\/当前已经启用的事件$/;"	m	struct:bufferevent
+epoll_add	k_epoll.cpp	/^epollop::epoll_add(void *arg, struct event *ev)$/;"	f	class:epollop
 epoll_init	k_epoll.cpp	/^epollop::epoll_init(struct event_base* base)$/;"	f	class:epollop
 epollfd	k_epoll.cpp	/^    int epollfd;$/;"	m	class:epollop	file:
 epollop	k_epoll.cpp	/^class epollop :$/;"	c	file:
@@ -80,7 +82,10 @@ ev_pncalls	k_event.h	/^    short *ev_pncalls; $/;"	m	struct:event
 ev_pri	k_event.h	/^    int ev_pri;     $/;"	m	struct:event
 ev_read	k_event.h	/^    struct event ev_read;$/;"	m	struct:bufferevent	typeref:struct:bufferevent::event
 ev_res	k_event.h	/^    int ev_res;         \/\/返回的事件状态$/;"	m	struct:event
+ev_signal	k_evsignal.h	/^    struct event ev_signal;$/;"	m	struct:evsignal_info	typeref:struct:evsignal_info::event
+ev_signal_added	k_evsignal.h	/^    int ev_signal_added;        \/\/标志signal事件是否已经注册$/;"	m	struct:evsignal_info
 ev_signal_next	k_event.h	/^    TAILQ_ENTRY (event) ev_signal_next;$/;"	m	struct:event
+ev_signal_pair	k_evsignal.h	/^    int ev_signal_pair[2];      \/\/用于通信的socketpair管道$/;"	m	struct:evsignal_info
 ev_timeout	k_event.h	/^    struct timeval ev_timeout;$/;"	m	struct:event	typeref:struct:event::timeval
 ev_write	k_event.h	/^    struct event ev_write;$/;"	m	struct:bufferevent	typeref:struct:bufferevent::event
 evbase	k_event-internal.h	/^    void *evbase;$/;"	m	struct:event_base
@@ -103,6 +108,10 @@ everite	k_epoll.cpp	/^    struct event *everite;$/;"	m	struct:evepoll	typeref:st
 everrorcb	k_event.h	/^typedef void (*everrorcb)(struct bufferevent *, short what, void *);$/;"	t
 evread	k_epoll.cpp	/^    struct event *evread;$/;"	m	struct:evepoll	typeref:struct:evepoll::event	file:
 evsel	k_event-internal.h	/^    const eventop *evsel;       \/\/父类指针$/;"	m	struct:event_base
+evsigcaught	k_evsignal.h	/^    sig_atomic_t evsigcaught[NSIG];     \/\/记录每个信号触发的次数$/;"	m	struct:evsignal_info
+evsigevents	k_evsignal.h	/^    struct event_list evsigevents[NSIG];    \/\/信号事件管理 结构体数组$/;"	m	struct:evsignal_info	typeref:struct:evsignal_info::event_list
+evsignal_caught	k_evsignal.h	/^    volatile sig_atomic_t evsignal_caught;  \/\/是够有信号发生的标记$/;"	m	struct:evsignal_info
+evsignal_info	k_evsignal.h	/^struct evsignal_info$/;"	s
 evtimer_add	k_event.h	93;"	d
 evtimer_del	k_event.h	98;"	d
 evtimer_pending	k_event.h	106;"	d
@@ -128,6 +137,8 @@ off	k_event.h	/^    size_t off;         \/\/未被使用的长度$/;"	m	struct:e
 orig_buffer	k_event.h	/^    unsigned char *orig_buffer;$/;"	m	struct:evbuffer
 output	k_event.h	/^    struct evbuffer *output;$/;"	m	struct:bufferevent	typeref:struct:bufferevent::evbuffer
 readcb	k_event.h	/^    evbuffercb readcb;$/;"	m	struct:bufferevent
+sh_old	k_evsignal.h	/^    struct sigaction **sh_old;      \/\/记录原来signal处理的函数指针 $/;"	m	struct:evsignal_info	typeref:struct:evsignal_info::sigaction
+sh_old_max	k_evsignal.h	/^    int sh_old_max;$/;"	m	struct:evsignal_info
 sig	k_event-internal.h	/^    struct evsignal_info sig;$/;"	m	struct:event_base	typeref:struct:event_base::evsignal_info
 signal_add	k_event.h	94;"	d
 signal_del	k_event.h	99;"	d

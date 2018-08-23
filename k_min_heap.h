@@ -66,11 +66,13 @@ min_heap::min_heap_reverve(unsigned new_capacity)
         if (capacity < new_capacity)
             capacity = new_capacity;
         if (!(timeout_event = 
-              (struct event**)realloc(timeout_event, capacity * (*timeout_event)))) 
+              (struct event**)realloc
+              (timeout_event, capacity * sizeof((*timeout_event)))))
         {
 
         }
     }
+    return 0;
 }
 
 #endif

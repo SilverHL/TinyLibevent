@@ -55,7 +55,7 @@ public:
 
 epollop::epollop()
 {
-    reinit = 1;
+    need_reinit = 1;
 
 }
 
@@ -97,5 +97,15 @@ epollop::epoll_init(struct event_base* base)
 int
 epollop::epoll_add(void *arg, struct event *ev)
 {
+    epollop *epop = static_cast<epollop *>(arg);
+    struct epoll_event epev = {0, {0}};
+    struct evepoll *evep;
+    int fd, op, events;
 
+    if (ev->ev_events & EV_SIGNAL)
+    {
+        return evsignal_add(ev);
+    }
+
+    fd = ev->event_fd;
 }
