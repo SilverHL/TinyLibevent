@@ -21,7 +21,8 @@
     {                           \
         struct type *tqe_next;  /*指向下一个节点*/  \
         struct type **tqe_prev; /*上一个节点的next 即entry本身*/ \
-}
+    }
+
 
 #define TAILQ_INIT(head) do {               \
     (head)->tqh_first = NULL;               \

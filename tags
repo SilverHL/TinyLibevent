@@ -25,7 +25,7 @@ EVLIST_SIGNAL	k_event.h	20;"	d
 EVLIST_TIMEOUT	k_event.h	18;"	d
 EVLOOP_NONBLOCK	k_event.h	89;"	d
 EVLOOP_ONCE	k_event.h	88;"	d
-EVUTIL_CLOSESOCKET	k_evutil.h	43;"	d
+EVUTIL_CLOSESOCKET	k_evutil.h	45;"	d
 EV_PERSIST	k_event.h	32;"	d
 EV_READ	k_event.h	29;"	d
 EV_SIGNAL	k_event.h	31;"	d
@@ -38,15 +38,17 @@ MAX_EPOLL_TIMEOUT_MSEC	k_epoll.cpp	50;"	d	file:
 MAX_NEVENTS	k_epoll.cpp	54;"	d	file:
 SIZE_MAX	k_buffer.cpp	12;"	d	file:
 SWAP	k_buffer.cpp	14;"	d	file:
+T	test.cpp	/^    T(int x) : x_(x) {} $/;"	f	class:T
+T	test.cpp	/^class T$/;"	c	file:
 TAILQ_EMPTY	k_event-internal.h	47;"	d
 TAILQ_END	k_event-internal.h	45;"	d
 TAILQ_ENTRY	k_queue.h	19;"	d
 TAILQ_FIRST	k_event-internal.h	44;"	d
 TAILQ_HEAD	k_queue.h	12;"	d
-TAILQ_INIT	k_queue.h	26;"	d
-TAILQ_INSERT_TAIL	k_queue.h	31;"	d
+TAILQ_INIT	k_queue.h	27;"	d
+TAILQ_INSERT_TAIL	k_queue.h	32;"	d
 TAILQ_NEXT	k_event-internal.h	46;"	d
-TAILQ_REMOVE	k_queue.h	38;"	d
+TAILQ_REMOVE	k_queue.h	39;"	d
 _INIT_MIN_HEAP_SIZE	k_min_heap.h	/^enum _INIT_MIN_HEAP_SIZE { _init_min_heap_size = 8 };$/;"	g
 _K_EVENTINTERNAL_H_	k_event-internal.h	10;"	d
 _K_EVENT_H_	k_event.h	9;"	d
@@ -117,12 +119,13 @@ evtimer_del	k_event.h	98;"	d
 evtimer_pending	k_event.h	106;"	d
 evtimer_set	k_event.h	81;"	d
 evutil_timeradd	k_evutil.h	16;"	d
-evutil_timerclear	k_evutil.h	41;"	d
+evutil_timerclear	k_evutil.h	43;"	d
 evutil_timersub	k_evutil.h	26;"	d
 fds	k_epoll.cpp	/^    struct evepoll *fds;$/;"	m	class:epollop	typeref:struct:epollop::evepoll	file:
 high	k_event.h	/^    size_t high;$/;"	m	struct:event_watermark
 input	k_event.h	/^    struct evbuffer *input;$/;"	m	struct:bufferevent	typeref:struct:bufferevent::evbuffer
 low	k_event.h	/^    size_t low;$/;"	m	struct:event_watermark
+main	test.cpp	/^int main()$/;"	f
 min_heap	k_min_heap.h	/^class min_heap$/;"	c
 min_heap	k_min_heap.h	/^min_heap::min_heap()$/;"	f	class:min_heap
 min_heap_elem_init	k_min_heap.h	/^min_heap::min_heap_elem_init(event *e)$/;"	f	class:min_heap
@@ -157,4 +160,5 @@ used_size	k_min_heap.h	/^    unsigned int used_size; $/;"	m	class:min_heap
 wm_read	k_event.h	/^    struct event_watermark wm_read;$/;"	m	struct:bufferevent	typeref:struct:bufferevent::event_watermark
 wm_write	k_event.h	/^    struct event_watermark wm_write;$/;"	m	struct:bufferevent	typeref:struct:bufferevent::event_watermark
 writecb	k_event.h	/^    evbuffercb writecb;$/;"	m	struct:bufferevent
+x_	test.cpp	/^    int x_;$/;"	m	class:T	file:
 ~epollop	k_epoll.cpp	/^epollop::~epollop()$/;"	f	class:epollop

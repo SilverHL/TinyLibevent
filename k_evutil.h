@@ -33,10 +33,11 @@ int evutil_make_socket_reuseable(int sock);
         }                                                   \
     } while (0)
 
-#define ecutil_timercmp(tvp, uvp, cmp)                      \
-    (((tvp)->tv_src == (uvp)->tv_sec) ?                     \
+#define evutil_timercmp(tvp, uvp, cmp)                      \
+    (((tvp)->tv_sec == (uvp)->tv_sec) ?                     \
      ((tvp)->tv_usec cmp (uvp)->tv_usec) :                  \
      ((tvp)->tv_sec cmp (uvp)->tv_sec)) 
+
 
 #define evutil_timerclear(tvp) (tvp)->tv_sec = (tvp)->tv_usec = 0
 
