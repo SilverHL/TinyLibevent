@@ -5,7 +5,6 @@
  * Author: @github/SilverHL
  * ***********************************************/
 
-
 #ifndef _K_EVENTINTERNAL_H_
 #define _K_EVENTINTERNAL_H_
 
@@ -17,12 +16,13 @@ class eventop
 protected:
 
     virtual void init(struct event_base *);
-    virtual int add(void *, struct event *);
-    virtual int del(void *, struct event *);
-    virtual int dispatch(struct event_base *, void *, struct timeval *);
-    virtual void dealloc(struct event_base *, void *);
+    virtual int add(struct event *);
+    virtual int del(struct event *);
+    virtual int dispatch(struct timeval *);
+    virtual void dealloc(void *);
 
     int need_reinit;
+    struct event_base *base;
 };
 
 struct event_base

@@ -37,7 +37,6 @@ struct event_base;
 
 struct event
 {
-public:
     TAILQ_ENTRY (event) ev_next;
     TAILQ_ENTRY (event) ev_active_next;
     TAILQ_ENTRY (event) ev_signal_next;

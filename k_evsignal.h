@@ -33,4 +33,4 @@ void evsignal_process(struct event_base *);
 int evsignal_add(struct event *);
 int evsignal_del(struct event *);
 void evsignal_dealloc(struct event_base *);
-#endif
+#endif /*end of _K_EVSIGNAL_H_*/

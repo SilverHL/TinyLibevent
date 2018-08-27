@@ -1,14 +1,16 @@
-class T
-{
-private:
-    int x_;
-public:
-    T();
-    T(int x) : x_(x) {} 
-    T operator=(int);
-};
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
 
 int main()
 {
-    T t = 1;
+    int a = 10;
+    int *pa = new int;
+    cout << pa << endl;
+
+    pa = static_cast<int *>(realloc(pa, 10*sizeof(a)));
+
+    cout << pa;
+
 }
