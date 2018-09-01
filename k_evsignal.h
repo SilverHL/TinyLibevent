@@ -24,7 +24,6 @@ struct evsignal_info
     struct sigaction **sh_old;      //记录原来signal处理的函数指针 
                                     //当信号注册的处理函数被清除 
                                     //需要重新设置处理函数
-
     int sh_old_max;
 };
 
