@@ -9,7 +9,6 @@
 #define _K_EVSIGNAL_H_
 
 #include <signal.h>
-
 #include "k_event-internal.h"
 
 struct evsignal_info
@@ -32,4 +31,5 @@ void evsignal_process(struct event_base *);
 int evsignal_add(struct event *);
 int evsignal_del(struct event *);
 void evsignal_dealloc(struct event_base *);
+
 #endif /*end of _K_EVSIGNAL_H_*/

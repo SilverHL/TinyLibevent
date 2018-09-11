@@ -26,7 +26,7 @@
 
 #define TAILQ_INIT(head) do {               \
     (head)->tqh_first = NULL;               \
-    (head)->tqh_first = &(head)->tqh_first; \
+    (head)->tqh_last = &(head)->tqh_first; \
 } while (0)
 
 #define TAILQ_INSERT_TAIL(head, elm, field) do {        \
@@ -37,7 +37,7 @@
 } while (0)
 
 #define TAILQ_REMOVE(head, elm, field) do {     \
-    if (((elm)->field.tqe_next) ! =NULL)        \
+    if (((elm)->field.tqe_next) != NULL)        \
         (elm)->field.tqe_next->field.tqe_prev =     \
             (elm)->field.tqe_prev;              \
     else                        \

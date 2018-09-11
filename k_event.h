@@ -15,11 +15,11 @@
 #include "k_queue.h"
 
 //事件状态
-#define EVLIST_TIMEOUT  0x01
-#define EVLIST_INSERTED 0x02
-#define EVLIST_SIGNAL   0x04
-#define EVLIST_ACTIVE   0x08
-#define EVLIST_INTERNAL 0x10
+#define EVLIST_TIMEOUT  0x01        //超时事件
+#define EVLIST_INSERTED 0x02        //已经被插入到小跟堆中
+#define EVLIST_SIGNAL   0x04        //信号事件
+#define EVLIST_ACTIVE   0x08        //激活
+#define EVLIST_INTERNAL 0x10        //内部用 
 #define EVLIST_INIT     0x80
 
 #define EVLIST_ALL  (0xf000 | 0x9f)

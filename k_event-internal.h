@@ -41,7 +41,7 @@ struct event_base
     min_heap timeheap;           //管理定时事件的小跟堆
 };
 
-#define TAILQ_FIRST(head)       ((heap)->tqh_first)
+#define TAILQ_FIRST(head)       ((head)->tqh_first)
 #define TAILQ_END(head)         NULL
 #define TAILQ_NEXT(elm, field)  ((elm)->field.tqe_next)
 #define TAILQ_EMPTY(head)       \
